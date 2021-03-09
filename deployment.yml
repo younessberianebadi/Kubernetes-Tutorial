@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tuto-deployment
+  labels:
+    app: kubetutoo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubetutoo
+  template:
+    metadata:
+      labels:
+        app: kubetutoo
+    spec:
+      containers:
+      - name: kubetutoo
+        image: younessberianebadi/kube-tuto
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

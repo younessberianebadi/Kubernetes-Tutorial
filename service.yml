@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: tuto-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: kubetutoo
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  externalIPs:
+    - 1.1.1.1
